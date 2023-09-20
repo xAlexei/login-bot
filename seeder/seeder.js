@@ -6,7 +6,7 @@ require("dotenv").config({ path: "../.env" });
 
 db.connect();
 
-const hashpassword = "Palacios12";
+const hashpassword = process.env.SECRET_PASSWORD;
 
 const user = [ 
     {

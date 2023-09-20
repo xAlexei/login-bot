@@ -17,7 +17,7 @@ async function create (req, res){
     })
     await user.save();
     if (user) {
-        return { message: "Created successfully", error: false };
+        return { message: "Created successfully" };
       }
     }catch(error){
         return {
