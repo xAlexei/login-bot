@@ -9,7 +9,7 @@ mongoose.set('strictQuery', true);
 const app = express();
 const port = process.env.PORT;
 
-const whiteList = ["*","http://localhost:3001","http://localhost:3001/","https://tradia.online","https://tradia.online/","https://tradia.online/pages/login"]
+const whiteList = ["*"]
 
 db.connect();
 app.use(morgan('dev'));
