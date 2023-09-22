@@ -9,8 +9,8 @@ mongoose.set('strictQuery', true);
 const app = express();
 const port = process.env.PORT;
 
-const whiteList = ["*"]
-
+const whiteList = ["*", "http://localhost:3001"]
+;
 db.connect();
 app.use(morgan('dev'));
 app.use(cors({
