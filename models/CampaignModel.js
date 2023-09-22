@@ -10,6 +10,9 @@ const CampaignModel = new Schema({
         type: String, 
         required: true
     },
+    files: [{
+        type: String, 
+    }],
     video: {
         type: String,
         default: 'Nothing here'         

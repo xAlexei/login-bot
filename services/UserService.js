@@ -64,6 +64,7 @@ async function login (req, res){
           });
         return {            
             message: "Welcome",
+            _id: userExists.id,
             user: userExists.username,            
             token,
             expiresIn: process.env.EXPIRE_SECRET,

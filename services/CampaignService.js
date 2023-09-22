@@ -1,4 +1,5 @@
 const CampaignModel = require("../models/CampaignModel");
+const multer = require("multer");
 
 async function createCampaign(req){
     try {
