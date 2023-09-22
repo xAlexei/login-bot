@@ -11,7 +11,8 @@ const CampaignModel = new Schema({
         required: true
     },
     video: {
-        type: String,         
+        type: String,
+        default: 'Nothing here'         
     }
 })
 

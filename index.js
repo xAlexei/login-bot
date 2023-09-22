@@ -23,8 +23,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
 
+const CampaignRoutes = require("./routes/CampaignRoute");
 const UserRoutes = require("./routes/UserRoute");
 
+app.use("/campaigns", CampaignRoutes);
 app.use("/users", UserRoutes);
 
 
