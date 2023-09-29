@@ -14,7 +14,7 @@ async function create (req, res){
         surname, 
         username,
         password: bcrypt.hashSync(password, 10)
-    })
+    })    
     await user.save();
     if (user) {
         return { message: "Created successfully" };
@@ -50,7 +50,7 @@ async function login (req, res){
 
         let userExists = await UserModel.findOne({ username: req.body.username }).select({
             username: 1, password: 1
-        })
+        })        
         if(!userExists) return { message: "User not found! Try again" };
 
         let validPass = await bcrypt.compareSync(

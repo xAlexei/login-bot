@@ -10,12 +10,15 @@ const CampaignModel = new Schema({
         type: String, 
         required: true
     },
+    description: {
+        type: String,
+        required: true
+    },
     files: [{
         type: String, 
     }],
-    video: {
-        type: String,
-        default: 'Nothing here'         
+    videoPath: {
+        type: mongoose.Schema.Types.ObjectId, ref: 'videos'
     }
 })
 

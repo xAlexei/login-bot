@@ -1,15 +1,17 @@
 const CampaignModel = require("../models/CampaignModel");
-const multer = require("multer");
+const fs = require("fs");
 
 async function createCampaign(req){
     try {
         const Campaign = await CampaignModel.create({
             user: req.body.user,
-            campaignName: req.body.campaignName        
-        })
+            campaignName: req.body.campaignName,
+            description: req.body.description,
+            files: req.file.path        
+        })             
         if(Campaign) return {
             message: "Campaign created!",
-            result: Campaign
+            result: Campaign,            
         }
     } catch (error) {
         return {
@@ -80,5 +82,8 @@ async function addVideo (req){
         }
     }
 }
+
+
+
 
 module.exports = { createCampaign, getCampaign, getAllcampaigns, addVideo }
